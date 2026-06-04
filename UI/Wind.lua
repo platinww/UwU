@@ -404,6 +404,7 @@ Text="",
 RichText=true,
 TextColor3=Color3.new(1,1,1),
 TextSize=14,
+AutoLocalize=false,
 },
 TextButton={
 BackgroundColor3=Color3.new(1,1,1),
@@ -412,6 +413,7 @@ Text="",
 AutoButtonColor=false,
 TextColor3=Color3.new(1,1,1),
 TextSize=14,
+AutoLocalize=false,
 },
 TextBox={
 BackgroundColor3=Color3.new(1,1,1),
@@ -420,6 +422,7 @@ ClearTextOnFocus=false,
 Text="",
 TextColor3=Color3.new(0,0,0),
 TextSize=14,
+AutoLocalize=false,
 },
 ImageLabel={
 BackgroundTransparency=1,
@@ -10222,6 +10225,7 @@ TabTitleAlign=an.TabTitleAlign or"Left",
 CustomEmptyPage=(an.CustomEmptyPage and next(an.CustomEmptyPage)~=nil)and an.CustomEmptyPage
 or{Icon="lucide:frown",IconSize=48,Title="This tab is Empty",Desc=nil},
 Border=an.Border,
+Hidden=an.Hidden or false,
 Selected=false,
 Index=nil,
 Parent=an.Parent,
@@ -10261,6 +10265,7 @@ BackgroundTransparency=1,
 Size=UDim2.new(1,-7,0,0),
 AutomaticSize="Y",
 Parent=an.Parent,
+Visible=not ap.Hidden,
 ThemeTag={
 ImageColor3="TabBackground",
 },
@@ -10733,6 +10738,12 @@ aA.Visible=false
 aB:Disconnect()
 end)
 end)
+
+if ap.Hidden then
+task.spawn(function()
+am:SelectTab(ap.Index)
+end)
+end
 
 return ap
 end
@@ -11375,6 +11386,7 @@ end
 
 local au={}
 for av,aw in next,ak.Tabs do
+if not aw.Hidden then
 local ax=ContainsText(aw.Title or"",at)
 local ay={}
 
@@ -11402,6 +11414,7 @@ Title=aw.Title,
 Icon=aw.Icon,
 Elements=ay,
 }
+end
 end
 end
 return au

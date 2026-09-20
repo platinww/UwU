@@ -1,1 +1,16 @@
-
+{
+  "Games": {
+    "ink": {
+      "Name": "Ink Game",
+      "Script": "https://raw.githubusercontent.com/platinww/UwU/refs/heads/main/INK-GAME"
+    },
+    "flick": {
+      "Name": "FPS Flick",
+      "Script": "https://raw.githubusercontent.com/platinww/UwU/refs/heads/main/FpsFlick"
+    },
+    "strongest": {
+      "Name": "The Strongest Battlegrounds",
+      "Script": "https://raw.githubusercontent.com/stormzdev/the-strongest-battlegrounds/refs/heads/main/invisibility.lua"
+    }
+  }
+}

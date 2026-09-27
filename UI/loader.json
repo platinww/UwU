@@ -1,7 +1,7 @@
 {
   "Games": {
     "ink": {
-      "Name": "Ink Game",
+      "Name": "Ink",
       "Script": "https://raw.githubusercontent.com/platinww/UwU/refs/heads/main/INK-GAME"
     },
     "flick": {
